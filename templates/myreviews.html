@@ -1,0 +1,85 @@
+{% extends 'layout.html' %} 
+{% include 'includes/_dashboardnavbar.html' %}
+
+{% block body %}
+
+<section class="myreviews-section">
+    <div class="message-container">
+        {% with messages = get_flashed_messages() %}  
+  {% if messages %}  
+    <div class="message-container">
+      <div class="container flex">
+        {% for message in messages %}  
+          <p class="message-success">{{message | safe}}</p>  
+        {% endfor %}
+      </div>
+    </div>  
+  {% endif %}  
+{% endwith %}
+    </div>
+    <div class="container flex">
+       <h3 class="search-title">
+           My Reviews
+       </h3>
+        <div class="myreviews-container">
+        {% if total_reviews == 0 %}
+            <h2 class="no-data">No Reviews Yet</h2>
+        {% endif %}
+        {% if total_reviews %}
+            <h4>No.of Reviews <span>({{total_reviews}})</span></h4>
+            {% for review in the_reviews %}
+            <div class="myreviews-box">
+                <div class="myreviews-header">
+                    <p class="isbn-title">
+                        ISBN :
+                    </p>
+                    <p class="isbn-number">
+                        {{review[2]}}
+                    </p>
+                </div>
+                <div class="myreviews-body">
+                    <p class="review-content">
+                        {{review[0]}}
+                    </p>
+                    <div class="ratings stars-outer">
+                            <div class="stars-inner">
+
+                            </div>
+                    </div>
+                    <small class="rate">(<span class="number-rating">{{review[1]}}</span>/5)</small>
+                    <div class="btn-option">
+                        <a href="{{url_for('info',isbn = review[2])}}" class="btn btn-save">Go to Book <i class="fas fa-chevron-right"></i></a>
+                        <a href = "{{url_for('delrevmy',isbn = review[2])}}" class="btn btn-delete">Delete this review <i class="fas fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+</section>
+
+{% include 'includes/_footer.html' %}
+<script>
+    
+
+document.addEventListener('DOMContentLoaded',getRatings);
+function getRatings()
+{
+const stars = 5;
+const ratings = document.querySelectorAll('.number-rating');
+const ratingStar = document.querySelectorAll('.stars-inner');
+console.log(ratings);
+console.log(ratingStar);
+     for(let i=0; i<ratings.length; i++)
+     {
+       const starPercent = (ratings[i].innerHTML/stars)*100;
+       console.log(starPercent);
+       const starPercentRounded = `${Math.round(starPercent/10)*10}%`
+       console.log(starPercentRounded);
+       ratingStar[i].style.width=starPercentRounded;
+     }
+
+}
+</script>
+{% endblock %}

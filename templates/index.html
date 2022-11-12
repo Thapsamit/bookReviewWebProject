@@ -1,0 +1,126 @@
+
+    {% extends 'layout.html' %}
+
+    <!--navbar-->
+    {% include 'includes/_homenavbar.html' %}
+     <!--hom section-->
+     
+     {% block body %}
+
+     <section class="home-section">
+         <div class="container">
+             <div class="home-content">
+                 <h2 class="titles">Welcome to book review Site!!</h2>
+                <h2 class="typing">
+                    <span class="typer" id="main" data-words="Create Account, Read Reviews, Write Reviews" data-colors="#EE5A24" data-delay="100" data-deleteDelay="1000"></span>
+                    <span class="cursor" data-owner="main"></span>
+                 </h2>
+                <h3 class="subtitle">
+                    A handpicked of 5000 books are waiting for your review
+                </h3>
+             </div>
+               
+                <div class="nav-btns">
+                    <a href="./register" class="btn">Register</a>
+                    <a href="./login" class="btn transparent">Login</a>
+                </div>
+             
+         </div>
+     </section>
+     <!--Cards section-->
+     <section class="card-section">
+         <div class="container">
+             <div class="card-title">
+                 <h1>
+                     Our Books
+                 </h1>
+             </div>
+             <div class="card-container">
+                 <div class="card-box">
+                     <div class="card-bx">
+                         <div class="image-container">
+                            <img src="/static/img/card-book1.jpg"  alt="book1">
+                         </div>
+                        
+                         <div class="book-title">
+                             <h3>
+                                 The dark is rising
+                             </h3>
+                         </div>
+                         <div class="book-author">
+                             <span>-- by Susan</span>
+                         </div>
+                         <div class="ratings">
+                             <i class="fas fa-star"></i>
+                             <i class="fas fa-star"></i>
+                             <i class="fas fa-star"></i>
+                             <i class="fas fa-star"></i>
+                             <i class="fas fa-star"></i>
+                         </div>
+                            <a href="#" class="btn">Read Reviews
+                                <i class="fas fa-chevron-right"></i>
+                            </a>     
+                     </div>
+                 </div>
+                 <div class="card-box">
+                    <div class="card-bx">
+                        <div class="image-container">
+                            <img src="/static/img/card-book2.jpg"  alt="book1">
+                        </div>
+                        
+                        <div class="book-title">
+                            <h3>
+                                Lady Midnight
+                            </h3>
+                        </div>
+                        <div class="book-author">
+                            <span>-- by Cassandara Clare</span>
+                        </div>
+                        <div class="ratings">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                           <a href="#" class="btn">Read Reviews
+                               <i class="fas fa-chevron-right"></i>
+                           </a>     
+                    </div>
+                </div>
+                <div class="card-box">
+                    <div class="card-bx">
+                        <div class="image-container">
+                            <img src="/static/img/card-book3.jpg"  alt="book1">
+                        </div>
+                        
+                        <div class="book-title">
+                            <h3>
+                                A Touch Of Dead
+                            </h3>
+                        </div>
+                        <div class="book-author">
+                            <span>-- Charlaine Harris</span>
+                        </div>
+                        <div class="ratings">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                           <a href="#" class="btn">Read Reviews
+                               <i class="fas fa-chevron-right"></i>
+                           </a>     
+                    </div>         
+                </div>
+             </div>
+         </div>
+     </section>
+
+     <!--Footer-->
+     {% include 'includes/_footer.html' %}
+
+    {% endblock %}
+
+    

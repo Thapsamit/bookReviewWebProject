@@ -1,0 +1,49 @@
+{% extends 'layout.html' %} 
+{% include 'includes/_dashboardnavbar.html' %}
+
+{% block body %}
+
+<div class="search-container">
+    <div class="container flex">
+      {% with messages = get_flashed_messages() %}  
+  {% if messages and messages[0][0] == 'Y' %}  
+    <div class="message-container">
+      <div class="container flex">
+        {% for message in messages %} 
+          <p class="message-success">{{message | safe}}</p>   
+        {% endfor %}
+      </div>
+    </div>  
+  {% endif %}  
+{% endwith %}
+        <h1 class="search-title">
+            Search a Book
+        </h1>
+        <div class="search-box">
+            <form action="{{url_for('search')}}" method = "POST">
+               <input name="book_detail" type="text" id="search-by" placeholder="Search by ISBN,TITLE or AUTHOR">
+                <select name="search_param" id="search-book">
+                    <option value="ISBN">ISBN</option>
+                    <option value="Title">TITLE</option>
+                    <option value="Author">AUTHOR</option>
+                </select>
+                <button type="submit">Search <i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}  
+      {% if messages and messages[0][0] == 'B' %} 
+        <div class="message-container container">
+          <div class="form-content">
+            {% for message in messages %} 
+              <p class="message">{{message | safe}}</p>  
+            {% endfor %}
+          </div>
+        </div>  
+      {% endif %} 
+</div>
+
+ 
+{% endwith %}
+{% include 'includes/_footer.html' %}
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'layout.html' %} 
+{% include 'includes/_registernavbar.html' %}
+
+{% block body %}
+     
+  <section class="auth-section">
+    <div class="auth-container center-container">
+      {% with messages = get_flashed_messages() %}  
+  {% if messages %}  
+    <div class="message-container">
+      <div class="container flex">
+        {% for message in messages %}  
+          <p class="message-success">{{message | safe}}</p>  
+        {% endfor %}
+      </div>
+    </div>  
+  {% endif %}  
+{% endwith %}
+        <div class="grid-container">
+            <div class="grid-1">
+                <img src="../static/img/book-mono.png" alt="mono-img">     
+            </div>
+            <div class="grid-2">
+                <div class="img-placeholder">
+                    <img src="/static/img/logo-dark.png" alt="logo">
+                </div> 
+                <div class="form-content">
+                    {% if the_message %}
+                    <p class="message">
+                        {{the_message | safe}}
+                    </p>
+                    {% endif %}
+                    <h2>Register With us </h2>
+                    <form action="" method="post">
+                        <div class="form-grp">
+                            <input name="name" type="text" placeholder="Enter Name" required>
+                        </div>
+                        <div class="form-grp">
+                            <input name="username" type="text" placeholder="Enter Username" required>
+                        </div>
+                      <div class="form-grp">
+                        <input name="email" type="email" placeholder="Enter Email address" required>
+                      </div>
+                       <div class="form-grp">
+                        <input name="password" type="password" placeholder="Enter Password" required>
+                       </div>
+                       <div class="form-grp">
+                        <input type="submit" value = "Register" class="btn">
+                       </div>
+                       <div class="form-grp">
+                           <p>
+                               Already registered ?
+                            <a href="/login" class="trans-btn">Login</a>
+                           </p> 
+                       </div>
+                    </form>
+                </div> 
+            </div>
+        </div>
+    </div>
+  </section>
+    <!--footer-->
+    {% include 'includes/_footer.html' %}   
+
+{% endblock %}

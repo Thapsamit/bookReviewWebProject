@@ -1,0 +1,63 @@
+{% extends 'layout.html' %} 
+{% include 'includes/_loginnavbar.html' %}
+
+{% block body %}
+
+
+<section class="auth-section">
+    <div class="login-container auth-container center-container">
+      {% with messages = get_flashed_messages() %}  
+  {% if messages %}  
+    <div class="message-container">
+      <div class="container flex">
+        {% for message in messages %}  
+          <p class="message-success">{{message | safe}}</p>  
+        {% endfor %}
+      </div>
+    </div>  
+  {% endif %}  
+{% endwith %}
+        <div class="grid-container">
+            <div class="grid-1">
+                <img src="../static/img/book-login.png" alt="mono-img">     
+            </div>
+            <div class="grid-2">
+                <div class="img-placeholder">
+                    <img src="/static/img/logo-dark.png" alt="logo">
+                </div> 
+                <div class="form-content">
+                    {% if the_message %}
+                    <p class="message">
+                        {{the_message | safe}}
+                    </p>
+                    {% endif %}
+                    <h2>Login Account </h2>
+                    <form action="#" method="post">
+                       
+                      <div class="form-grp">
+                        <input name="email" type="email" placeholder="Enter Email address" required>
+                      </div>
+                       <div class="form-grp">
+                        <input name="password" type="password" placeholder="Enter Password" required>
+                       </div>
+                       <div class="form-grp">
+                        <input type="submit" value = "Login" class="btn">
+                       </div>
+                       <div class="form-grp">
+                           <p>
+                               Not registered ?
+                            <a href="/register" class="trans-btn">Register</a>
+                            Here
+                           </p>
+                           
+                       </div>
+                    </form>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+    <!--footer-->
+    {% include 'includes/_footer.html' %}   
+
+{% endblock %}

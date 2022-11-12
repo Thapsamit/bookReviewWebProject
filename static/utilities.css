@@ -1,0 +1,444 @@
+.container
+{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0.625rem 0;
+    
+}
+.flex
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+   
+}
+.btn
+{
+    color: white;
+    padding: 0.8rem 1.8rem;
+    background: rgba(238, 90, 36,1.0);
+    font-size: 1.2rem;
+    border-radius: 3px;
+}
+.btn:hover{
+    transform: scale(0.98);
+    cursor: pointer;
+}
+.img-placeholder
+{
+    width: 200px;
+}
+
+.center-container
+{
+    width: 75%;
+    max-width: 100%;
+    margin: 0 auto;
+   
+    padding: 0 0.625rem;
+    
+}
+.grid-container
+{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    height: 550px;  
+}
+.message
+{
+    border: 1px solid var(--danger-btn);
+    padding: 0.4rem 0.4rem;
+    color:var(--danger-btn);
+    margin-top: 0;
+    border-radius: 4px;
+    background-color:rgba(232, 65, 24,0.2);
+
+}
+.message-success{
+    color:var(--success-color);
+    background-color: rgba(76, 209, 55,0.1);
+    border: 1px solid var(--success-color);
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 4px;
+    padding: 0.4rem 0.4rem;  
+   }
+  button:hover{
+      cursor: pointer;
+      transform: scale(0.98);
+  }
+  
+.btn-save
+{
+    background-color: var(--success-color);
+}
+.btn-edit
+{
+    background-color: var(--danger-btn);
+}
+
+.search-title
+  {
+    margin-top: 4rem;
+    font-size: 2.5rem;
+    color: var(--dark-black);
+    position: relative;
+
+  }
+  textarea:hover
+  {
+      border: 2px solid var(--dark-orange);
+  }
+  .btn-delete
+  {
+      background-color: var(--danger-btn);
+  }
+  .search-title::before
+{
+    position: absolute;
+    content:"";
+    top: 100%;
+    width: 50%; 
+    height: 8px;
+    border-radius: 40px;
+    background: var(--dark-orange);
+}
+.no-data
+{
+    color:var(--dark-orange);
+    text-align: center;
+    font-weight: 400;
+    margin-top: 2rem;
+}
+
+/* Modal */
+
+.modal
+{
+    display: none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    
+    z-index:2;
+    background:rgba(0,0,0,0.5);
+}
+.modal-container
+{
+    background-color: white;
+    margin: 20% auto;
+    padding:20px;
+    width:40%;
+    box-shadow:  0 5px 8px 0 rgba(0,0,0,0.2);
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+.closeBtn
+{
+    color: var(--dark-grey);
+    float:right;
+    font-size: 2rem;
+}
+.closeBtn:hover,.closeBtn:focus
+{
+    color:red;
+    cursor:pointer;
+}
+.modal .btn
+{
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-right:0.7rem;
+    transition: 0.2s linear;
+}
+.modal .btn:hover
+{
+    background: rgba(0,0,0,0.7);
+    cursor:pointer;
+}
+.modal .opt-btn
+{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/*  ratings */
+
+#review-set .ratings
+{
+    
+    position: relative;
+    transform: rotateY(180deg);
+    display: flex;
+    margin: 10px 0;
+    
+}
+#review-set .ratings input[type=radio]
+{
+  display: none;
+}
+#review-set .ratings label{
+    display:block;
+    cursor:pointer;
+     width:30px;
+}
+#review-set .ratings label::before
+{
+    content: "\f005";
+    font-family: fontAwesome;
+    position:relative;
+    display:block;
+    font-size:30px;
+    color:#c8d6e5;
+}
+#review-set .ratings label::after
+{
+    content: "\f005";
+    font-family: fontAwesome;
+    position:absolute;
+    display:block;
+    font-size:30px;   
+    color: orange;
+    top:0;
+    opacity:0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+}
+#review-set .ratings label:hover::after,
+#review-set .ratings label:hover ~ label::after,
+#review-set .ratings input:checked ~ label::after
+{
+    opacity: 1;
+}
+
+
+@keyframes modalopen
+{
+   from{
+       opacity: 0;
+   }
+   to
+   {
+       opacity: 1;
+   }
+
+}
+
+
+
+/* Responsive Navbar */ 
+.toggle-button
+{
+    position:absolute;
+    top:.8rem;
+    right:1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30px;
+    height:21px;
+    margin-top:1rem;
+    cursor:pointer;
+}
+.toggle-button .bar{
+    height:3px;
+    width:100%;
+    background-color: white;
+    border-radius:10px;
+    transition: 0.3s linear;
+}
+.toggle-button:hover .bar{
+    background-color: var(--dark-orange);
+}
+@media(max-width:900px)
+{
+    .toggle-button
+    {
+        display:flex;
+    }
+    
+    .navbar-section nav
+    {
+       
+        width:100%;
+        display:none;
+        
+    }
+    .navbar-section .flex{
+        flex-direction: column;
+        align-items: flex-start;
+        transition:0.5s linear;
+       
+    }
+    .navbar-section nav ul
+    {
+        flex-direction: column;
+        width:100%;
+        margin:0;
+        border-top:1px solid var(--light-grey);
+        
+    }
+    .navbar-section nav ul li
+    {
+        text-align: right;
+        width:100%;
+        padding-top:1rem;
+        
+    }
+    .navbar-section nav ul li a
+    {
+        padding: 0.5rem 0.5rem;
+       
+    }
+    .navbar-section nav ul li a:hover
+    {
+    border-bottom:none;        
+    }
+    .navbar-section nav.active{
+        display:flex;
+    }
+
+}
+
+/* My Review responsive */
+@media(max-width:900px)
+{
+   .btn-option a
+   {
+       display: block;
+       text-align:center;
+       margin-bottom:0.4rem;
+   }   
+}
+/* modal reponsive */
+@media(max-width:650px)
+{
+  .modal-container{
+      width:70%;
+  }
+  .modal .btn{
+      display:block;
+      margin: 0.4rem 0;
+  }
+}
+
+/* Register Responsive */
+
+@media(max-width:750px)
+{
+    .auth-container .grid-container{
+        grid-template-columns: 1fr;
+
+    }
+    .auth-container .grid-container .grid-1
+    {
+        display:none;
+    }
+    .login-container .grid-container .grid-2
+    {
+        border-left:none;
+    }
+
+    /*animation bubble*/
+    .auth-container .grid-container .grid-2 .form-content h2::after
+    {
+        animation: none;
+        width:0;
+        height:0;
+    }
+    
+}
+
+/* login board responsive */
+@media(max-width:750px)
+{
+    .login-container .grid-container .grid-2{
+      align-self: center;
+    }
+}
+
+/* dashboard responsive */
+
+
+/* Review info */
+@media(max-width:600px)
+{
+    .books-section .container .grid-books
+    {
+        
+        height:1500px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "booksDetails"
+        "reviewBox"
+        "reviewSection"
+        ;
+    }
+
+}
+
+/* profile responsive */
+
+@media(max-width:870px)
+{
+    .profile-section .container{
+        max-width:90%;
+    }
+    .profile-section .flex .profile-card .profile-details-card .profile-details
+    {
+        margin-left: 0;
+    }
+    .profile-section .flex .profile-card .profile-details-card i
+    {
+        display:none;
+    }
+    .profile-section .flex .profile-card .profile-bottom .btn{
+        display:block;
+        margin-bottom:0.675rem;
+    }
+    .profile-section .flex .profile-card .profile-basic-details form label
+    {
+        display:none;
+    }
+    .profile-section .flex .profile-card .profile-basic-details form input
+    {
+        position:relative;
+        width:100%;
+    }
+}
+
+
+/* Star ratings */
+.stars-outer
+{
+    position: relative;
+    display: inline-block;
+    
+}
+.stars-inner{
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+    white-space: nowrap;
+    width:0;
+}
+
+.stars-outer::before
+{
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: lightgray;
+}
+.stars-inner::before
+{
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--dark-orange);
+}

@@ -1,0 +1,1093 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+:root{
+    --dark-black: rgba(52, 60, 76, 1);
+    --dark-grey:rgba(140, 148, 156, 1);
+    --light-grey: rgba(163, 167, 173, 1);
+    --dark-orange:rgba(238, 90, 36,1.0);
+    --light-orange: rgba(251, 148, 101, 1);
+    --dark-blue:rgba(30, 30, 100, 1);
+    --success-color : rgba(76, 209, 55,1.0);
+    --danger-btn:rgba(232, 65, 24,1.0);
+    --light-background:rgba(223, 230, 233,0.3)
+}
+
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    font-family: "poppins",sans-serif;
+   
+
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    margin: 0.625rem 0;
+}
+img{
+    width: 100%;
+}
+
+p{
+    margin: 0.625rem 0;
+}
+a
+{
+    text-decoration: none;
+}
+ul
+{
+    list-style-type: none;
+}
+section{
+    margin-bottom: 1.8rem;
+}
+.navbar-section
+{
+    width: 100%;
+    background-color:var(--dark-black);
+    box-shadow: 0 0 4px 2px rgba(0, 0,0,0.2);  
+    
+
+}
+
+
+.navbar-section .flex
+{
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    
+}
+.navbar-section nav
+{
+   
+    margin-top: 0.7rem;
+}
+.navbar-section nav ul
+{
+   display: flex;
+   
+}
+.navbar-section nav ul li 
+{
+    padding: 0.6rem 0;
+}
+.navbar-section nav ul li a
+{
+    font-size: 1.2rem;
+    color: var(--light-grey);
+    margin: 0 10px;
+    font-weight: 400;
+    padding: 0.7rem 1rem;
+    transition: 0.5s linear;
+ 
+    transition: 0.5s linear;
+  
+}
+
+
+.navbar-section nav ul li a:hover{
+    border-bottom: 2px solid var(--dark-orange);
+    color: var(--dark-orange);
+}
+
+/* home section*/
+
+.home-section
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 550px;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    background-image: url('/static/img/book-main.jpg');
+    position: relative;
+}
+.home-section::after
+{
+    position: absolute;
+    content: " ";
+    top: 0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,0.7);
+    z-index:1;
+}
+
+.home-section .container .home-content
+{
+    position: relative;
+    z-index: 3;
+}
+.home-section .container .home-content .typing
+{
+   
+    margin-bottom: 0.7rem;
+    font-size: 2rem;
+}
+
+.home-section .container .titles
+{
+    font-size: 3rem;
+    padding: 1.5rem 0;
+}
+.home-section .container .subtitle
+{
+    color: var(--dark-grey);
+    font-weight: 500;
+   
+}
+.home-section .container .nav-btns
+{
+    z-index: 3;
+    position: relative;
+    margin: 2rem 1rem;
+}
+.home-section .container .nav-btns .btn{
+   margin: 0 0.4rem;
+}
+.home-section .container .nav-btns .transparent
+{
+    border: 2px solid white;
+    background: transparent; 
+    transition:0.2s linear;  
+}
+.home-section .container .nav-btns .transparent:hover{
+    border:2px solid var(--dark-orange);
+    color:var(--dark-orange);
+}
+
+
+/*card section*/
+
+.card-section
+{
+    width: 100%;
+    height: auto;
+}
+.card-section .card-title
+{
+    font-size: 2.2rem;
+    color: var(--dark-black);
+    text-align: center;
+    padding: 0.1rem 0;
+    margin-bottom: 1rem;
+}
+.card-section .card-container
+{
+   
+    display: flex;
+    justify-content: space-around;
+    margin: 0 1rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
+.card-section .card-container .card-box
+{  
+    position: relative;
+    display: flex;
+    padding: 1.5rem 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    border: 3px solid var(--dark-orange);
+    padding-bottom: 1.8rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.2s linear;
+    margin-bottom: 1.4rem;
+}
+.card-section .card-container .card-box .card-bx .image-container
+{
+    height: 250px;
+    position: relative;
+  
+    width: 250px;
+    margin-bottom: 0.8rem;
+}
+.card-section .card-container .card-box .card-bx .image-container img
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.card-section .card-container .card-box .card-bx .book-author
+{
+  text-align: right;
+  margin-bottom: 0;
+  color: var(--dark-grey);
+}
+.card-section .card-container .card-box .card-bx .ratings
+{
+    color: orange;  
+    margin:  1rem 0;
+}
+
+.card-section .card-container .card-box:hover{
+    transform: translateY(-10px);
+}
+
+
+/*footer*/
+
+footer{
+    width: 100%;
+    background-color: var(--dark-black);
+    text-align: center;
+  
+   
+   
+}
+footer .flex
+{
+    flex-direction: column;
+}
+footer .container .img-placeholder
+{
+    padding: 1rem 0;
+}
+footer .container .copyright
+{
+   border-top: 1px solid var(--light-grey);
+   color: var(--light-grey);
+   width: 100%;
+   padding: 0.8rem 0;
+} 
+
+
+/*  Register  page and login */
+
+.auth-section{
+   min-height:550px;
+   max-height:auto;
+   background-color: var(--light-background);
+   margin-bottom:0;
+   padding-top:2rem;
+   padding-bottom: 2rem;
+}
+
+
+.auth-container .grid-container{
+    grid-template-columns: 55% 45%;
+    margin: 1rem 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+.auth-container .grid-container .grid-1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-orange);
+ 
+}
+.auth-container .grid-container .grid-2
+{
+   
+   margin: 1rem;
+ 
+}
+.auth-container .grid-container .grid-2 .img-placeholder
+{
+  
+    margin: 0.7rem 0;
+    width: 100%;
+    text-align: center;
+    
+}
+.auth-container .grid-container .grid-2 .img-placeholder img
+{
+    width: 200px;
+    height: 50px;
+}
+.auth-container .grid-container .grid-2 .form-content
+{
+   
+    padding: 1rem 1.3rem;
+}
+.auth-container .grid-container .grid-2 .form-content h2
+{
+    margin-bottom: 0.8rem;
+    color: var(--dark-black);
+    position: relative;
+  
+    
+}
+.auth-container .grid-container .grid-2 .form-content h2::after
+{
+  position:absolute;
+  content:" ";
+  width: 10px;
+  height: 10px;
+  background-color: var(--dark-orange);
+  border-radius: 50%;
+  right:  40%;
+  bottom: 0;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+
+.auth-container .grid-container .grid-2 .form-content form
+{
+    margin: 1rem 0;
+   
+}
+.auth-container .grid-container .grid-2 .form-content form .form-grp
+{
+    margin: 1rem 0;   
+    width: 100%;
+}
+.auth-container .grid-container .grid-2 .form-content form input
+{
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: "poppins";
+    font-weight: 400;
+    border-bottom: 1px solid var(--dark-grey);
+    padding: 0.3rem 0;
+    transition: 0.3s linear;
+}
+.auth-container .grid-container .grid-2 .form-content form input:hover{
+    
+    border-bottom: 1px solid var(--dark-black);
+    
+}
+.auth-container .grid-container .grid-2 .form-content form input::placeholder
+{
+    font-weight: 400;
+    color: var(--dark-black);
+    font-size: 0.76rem;
+}
+.auth-container .grid-container .grid-2 .form-content form .btn
+{
+    background-color: var(--dark-orange);
+    padding: 0.7rem 0;
+    margin-top: 0.8rem;
+    border: none;
+}
+.auth-container .grid-container .grid-2 .form-content form .btn:hover
+{
+    transform: scale(0.98);
+    border-bottom: none;
+    font-weight: none;
+
+}
+.auth-container .grid-container .grid-2 .form-content form a{
+    
+    color: var(--light-grey);  
+}
+.auth-container .grid-container .grid-2 .form-content form a:hover
+{
+    color: var(--dark-orange);
+}
+/* login */
+.login-container .grid-container .grid-1
+{
+    background-color: white;
+    
+}
+.login-container .grid-container .grid-2 
+{
+    border-left: 1px solid var(--light-grey);
+    padding-left: 0.8rem;
+    
+}
+/*
+.login-container .grid-container .grid-2 .form-content
+{
+   
+    margin-top: 1.5rem;
+}
+
+
+.login-container .grid-container .grid-2
+{
+  background-color: var(--dark-orange);
+  margin: 0;
+  color: white;
+}
+.login-container .grid-container .grid-2 .form-content form .form-grp
+{
+ margin: 1rem 0;
+}
+
+.login-container .grid-container .grid-2 .form-content form .btn
+{
+    background-color: var(--dark-black);
+}
+.login-container .grid-container .grid-2 .form-content h2
+{
+    color: white;
+    margin-top: 0.8rem;
+}
+.login-container .grid-container .grid-2 .form-content .message
+{
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.8);
+    color:red;
+}
+.login-container .grid-container .grid-2 .form-content form input{
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.login-container .grid-container .grid-2 .form-content form input:hover
+{
+    border-bottom: 1px solid rgba(255,255,255,1);
+}
+.login-container .grid-container .grid-2 .form-content form input::placeholder
+{
+    color: rgba(255,255,255,0.7);
+}
+
+.login-container .grid-container .grid-2 .form-content form a:hover
+{
+    color: var(--dark-black);
+}
+.login-container .grid-container .grid-2 .form-content h2::after
+{
+    background-color: var(--dark-black);
+}
+*/
+
+
+/* dahsboard*/
+.navbar-section nav ul li .btn-logout
+{
+  color: white;
+  background-color: var(--danger-btn);
+  padding: 0.5rem 1rem;
+  transition: 0.3s linear;
+}
+.fa-power-off
+{
+    font-weight: lighter;
+    padding-left: 0.3rem;
+}
+
+.navbar-section nav ul li .btn-logout:hover
+{
+  background-color:rgba(232, 65, 24,0.7);
+  color:white;
+  border-bottom: none;
+}
+.dash-title
+{
+    color: white;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--dark-orange);
+}
+.message-container
+{
+  margin:1rem 0;
+  text-align:center;
+}
+.search-container
+{
+    min-height: 550px;
+    max-height: auto;
+    background-color: var(--light-background);
+}
+.search-container .container .search-box{
+    margin-top:3rem;
+    background-color: var(--dark-black);
+    border-radius:4px;
+    padding: 2rem 1.3rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2)
+    margin-bottom: 3rem;
+   
+}
+.search-container .message-container{
+  width: 500px;
+}
+.search-container .container.flex{
+    flex-direction: column;
+}
+.search-container .container .search-title
+{
+  margin-top: 4rem;
+  font-size: 2.5rem;
+  color: var(--dark-black);
+  position: relative;
+}
+.search-container .container .search-title::before
+{
+    position: absolute;
+    content:"";
+    top: 100%;
+    width: 50%; 
+    height: 8px;
+    border-radius: 40px;
+    background: var(--dark-orange);
+}
+
+
+.search-container .container .search-box form
+{
+    padding: 0.8rem 2rem;
+}
+.search-container .container .search-box form input,
+.search-container .container .search-box form select,
+.search-container .container .search-box form button
+{
+    
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+    margin: 0 1rem;
+    border-radius: 2px;
+    border:  none;
+    font-family: "poppins";
+    outline:none;
+    transition: 0.1s linear;
+    box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1);
+    cursor: pointer;
+    
+}
+.search-container .container .search-box form input:hover{
+    border: 2px solid var(--dark-orange);
+    
+}
+
+
+.search-container .container .search-box form button
+{
+  border: none;
+  color: white;
+  background: var(--dark-orange);
+  outline: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Search Results */
+
+.search-results
+{
+   min-height:550px;
+   max-height:auto;
+   background-color: var(--light-background);
+   margin-bottom:0;
+   padding-bottom: 2rem;
+}
+.search-results .container.flex
+{
+    flex-direction: column;
+    
+}
+.search-results .container .search-title
+{
+    margin-bottom: 1.3rem;
+    margin-top: 2.7rem;
+}
+.search-results .container .search-table
+{
+   
+    padding: 1rem 2rem;    
+}
+.search-results .container .search-table table{
+    
+    border-collapse: collapse;
+    border: 1px solid var(--light-grey); 
+    background-color: white;
+}
+.search-results .container .search-table table tr
+{
+    transition: 0.3s linear;
+    padding: 1rem;
+   
+}
+.search-results .container .search-table table tr th
+{
+    background-color: var(--dark-black);
+    color: white; 
+}
+
+.search-results .container .search-table table tr th,
+.search-results .container .search-table table tr td
+{
+       padding: 1.3rem 2.3rem;
+}
+.search-results .container .search-table table tr td .btn
+{
+    font-size: 1rem;
+     padding:0.5rem 0.5rem;
+}
+
+.search-results .container .search-table table tr:hover
+{
+    border-left:3px solid var(--dark-orange);
+    background-color: rgba(163, 167, 173, 0.5);
+    cursor: pointer;
+}
+
+
+/*Profile-section*/
+
+.profile-section
+{
+     color: var(--dark-black);
+     min-height: 600px;
+     max-height: auto;
+     padding-bottom: 2rem;
+     background-color: rgba(223, 230, 233,0.3);
+     margin-bottom:0;
+     
+}
+
+.profile-section .message-container
+{
+margin-top:0;
+padding-top: 1rem;
+margin-bottom: 0;
+}
+
+.profile-section .container{
+    max-width: 60%;
+   
+}
+.profile-section .flex{
+    flex-direction: column;
+}
+.profile-section .flex .search-title
+{
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+}
+.profile-section .flex .profile-card
+{
+    background-color: white;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 3rem;
+   
+}
+.profile-section .flex .profile-card .profile-details-card
+{
+   
+    display: flex;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid var(--dark-orange);
+}
+
+.profile-section .flex .profile-card .profile-details-card i{
+  font-size: 6rem;
+  margin-left: 3rem;
+}
+.profile-section .flex .profile-card .profile-details-card .profile-details
+{
+    margin-left: 2rem;
+}
+.profile-section .flex .profile-card .profile-details-card .profile-details .profile-counts
+{
+    display: flex;
+}
+.profile-section .flex .profile-card .profile-details-card .profile-details .profile-counts small{
+    color: var(--light-grey);
+    font-weight: 500;
+}
+.profile-section .flex .profile-card .profile-details-card .profile-details .profile-counts h4{
+    margin-right: 1rem;
+    color: var(--dark-orange);
+}
+.profile-section .flex .profile-card .profile-basic-details
+{
+  margin: 0;
+
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--dark-orange);
+}
+.profile-section .flex .profile-card .profile-details-card h3
+{
+    margin: 0;
+}
+.profile-section .flex .profile-card .profile-basic-details .profile-basic{
+  
+    margin: 0.8rem 0;
+}
+.profile-section .flex .profile-card .profile-basic-details form
+{
+   
+    position: relative;
+}
+.profile-section .flex .profile-card .profile-basic-details form label{
+    padding: 1rem;
+}
+.profile-section .flex .profile-card .profile-basic-details form input{
+    position: absolute;
+    right: 0;
+   border:none;
+   width: 50%;
+   background: none;
+   outline:none;
+   font-size: 1rem;
+   font-family: "poppins";
+   border-bottom: 1px solid var(--light-grey);
+}
+.profile-section .flex .profile-card .profile-basic-details form input:hover
+{
+    cursor: pointer;
+}
+.profile-section .flex .profile-card .profile-basic-details form .profile-btn
+{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.profile-section .flex .profile-card .profile-basic-details form .profile-btn a
+{
+    padding: 0.5rem 0.8rem;
+    margin-right: 1rem;
+}
+
+.profile-section .flex .profile-card .profile-bottom
+{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+}
+.profile-section .flex .profile-card .profile-bottom .btn
+{
+    padding: 0.5rem 0.8rem;
+    margin-right: 1rem;
+}
+
+
+
+#profile-save
+{
+    display: none;
+    transition: 0.3s linear;
+}
+
+
+
+/* Books section */
+
+.books-section
+{
+    min-height: 600px;
+    max-height: auto;
+    padding-bottom: 2rem;
+    background-color: rgba(223, 230, 233,0.3);
+    margin-bottom:0;
+}
+.books-section .message-container
+{
+margin-top:0;
+padding-top: 1rem;
+margin-bottom: 0;
+}
+
+.books-section .container .grid-books
+{
+   
+   display: grid;
+   width: 100%;
+   height:750px;
+   padding: 0.8rem 1rem;
+   grid-template-columns: 1fr 2fr;
+   grid-template-rows:  1fr 2fr;
+   grid-gap: 10px;
+   grid-template-areas: "booksDetails reviewBox"
+   "booksDetails reviewSection";  
+ 
+}
+
+.books-section .container .grid-books .books-details{
+    grid-area: booksDetails;
+    background-color: var(--dark-black);
+    
+}
+.books-section .container .grid-books .books-details img{
+    padding: 0.8rem;
+    height: 400px;
+    border-radius: 4px;
+}
+.books-section .container .grid-books .books-details .basic-details
+{
+  padding: 0 0.8rem;
+  margin-bottom:0.8rem;
+}
+.books-section .container .grid-books .books-details .basic-details h4 
+{
+   margin:0;
+   color: white;
+   font-weight: 400;
+}
+.books-section .container .grid-books .books-details .basic-details .ratings i
+{
+    color: var(--dark-orange);
+     margin-bottom:0.9rem;
+}
+.books-section .container .grid-books .books-details .basic-details .rate{
+    font-size:1rem;
+}
+.books-section .container .grid-books .books-details .basic-details p,
+.books-section .container .grid-books .books-details .basic-details small
+{
+    margin: 0.2rem 0;
+    color: var(--light-grey);
+}
+.books-section .container .grid-books .books-details .basic-details .btn
+{
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    
+    font-family: "poppins";
+
+}
+.books-section .container .grid-books > div
+{
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.books-section .container .grid-books .review-box
+{
+   grid-area: reviewBox;
+   padding: 0.8rem;
+   background-color: white;
+}
+.books-section .container .grid-books .review-box .reviews-bx
+{
+    margin: 0 1rem; 
+ 
+  
+}
+.books-section .container .grid-books .review-box .reviews-bx h3
+{
+    margin:0;
+    font-weight: 500;
+   
+}
+.books-section .container .grid-books .review-box .reviews-bx form .ratings i
+{
+    margin: 0.7rem 0;
+    color: rgba(163, 167, 173, 0.7);
+}
+.books-section .container .grid-books .review-box .reviews-bx form textarea
+{
+    width: 100%;
+    font-family:"poppins";
+    font-size: 1rem;
+    padding: 0.5rem;
+    height: 200px;
+    outline: none;
+    resize: none;
+    transition: 0.2s linear;
+     border-radius: 4px;
+}
+.books-section .container .grid-books .review-box .reviews-bx form .btn
+{
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  display: inline-block;
+  font-family: "poppins";
+}
+
+.books-section .container .grid-books .review-section
+{
+    grid-area: reviewSection;
+    background-color: white;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.books-section .container .grid-books .review-section h3
+{
+    margin: 0.8rem 2rem;
+    font-weight: 500;
+}
+
+.books-section .container .grid-books .review-section  .review-section-box
+{
+    display: flex; 
+    position: relative;
+    margin: 0 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.8rem;
+}
+.books-section .container .grid-books .review-section  .review-section-box::before
+{
+    position: absolute;
+    content:"";
+    top:0;
+    left:0;
+    width: 3px;
+    border-radius: 10px;
+    height: 100%;
+    background-color: var(--dark-black);
+}
+.books-section .container .grid-books .review-section  .review-section-box:nth-child(odd)::before
+{
+    background-color: var(--dark-orange);
+}
+.books-section .container .grid-books .review-section  .review-section-box:nth-child(odd) .name-of-user
+{
+  color: var(--dark-black);
+}
+
+.books-section .container .grid-books .review-section  .review-section-box:nth-child(odd) .stars-inner::before
+{
+    color: var(--dark-black);
+}
+
+.books-section .container .grid-books .review-section  .review-section-box h4
+{
+    margin-top:0.8rem;
+    color: var(--dark-orange);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    
+}
+.books-section .container .grid-books .review-section  .review-section-box .fa-user-circle
+{
+    font-size: 2rem;
+    padding: 1rem;
+    color: var(--dark-grey);
+}
+.books-section .container .grid-books .review-section  .review-section-box .user-comments .ratings{
+    color: var(--light-grey);
+    margin-bottom: 0.8rem; 
+}
+.books-section .container .grid-books .review-section  .review-section-box .user-comments .ratings small{
+    color: black;
+}
+.books-section .container .grid-books .review-section p{
+    
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top:0;
+    padding-top:0;
+    margin-bottom: 1rem;
+}
+
+/* My Reviews */
+
+.myreviews-section
+{
+    min-height:600px;
+    max-height:auto;
+    background-color:rgba(223, 230, 233,0.3);
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+}
+.myreviews-section .message-container
+{
+    margin-top:0;
+    padding-top: 1rem;
+    margin-bottom: 0;
+}
+.myreviews-section .flex .search-title
+{
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+    
+}
+.myreviews-section .container.flex{
+    flex-direction: column;
+    
+}
+.myreviews-section .container .myreviews-container
+{
+   
+    width:85%;
+    padding: 1rem 2rem;
+}
+.myreviews-section .container .myreviews-container h4
+{
+    color:var(--dark-black);
+    font-weight:500;
+}
+.myreviews-section .container .myreviews-container .myreviews-box
+{
+    background-color: white;
+    margin-bottom: 0.8rem;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.myreviews-section .container .myreviews-container .myreviews-box .myreviews-header
+{
+    display: flex;
+    background-color: var(--dark-black);
+    color: white;
+    padding: 0 1rem;
+}
+.myreviews-section .container .myreviews-container .myreviews-box .myreviews-header .isbn-title
+{
+    margin-right:0.3rem;
+}
+.myreviews-section .container .myreviews-container .myreviews-box .myreviews-header .isbn-number
+{
+    color: var(--dark-orange);
+}
+
+.myreviews-section .container .myreviews-container .myreviews-box .myreviews-body
+{
+    padding: 1rem 1rem;
+    
+}
+.myreviews-section .container .myreviews-container .myreviews-box .myreviews-body .review-content
+{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    
+}
+.myreviews-section .container .myreviews-container .myreviews-box .myreviews-body .ratings{
+    margin-bottom:1rem;
+    color: var(--dark-orange);
+}
+.myreviews-section .container .myreviews-container .myreviews-box .myreviews-body .btn-option
+{
+    margin-bottom: 0.5rem;
+}
+.myreviews-section .container .myreviews-container .myreviews-box .myreviews-body .btn-option .btn{
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem; 
+}
+
+/* animations*/
+@keyframes bounce{
+    0%{
+        bottom: 0;
+    }
+    50%
+    {
+        bottom: 100%;
+    }
+    100%
+    {
+        bottom: 0;
+    }
+
+} 

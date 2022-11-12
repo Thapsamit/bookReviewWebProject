@@ -1,0 +1,80 @@
+{% extends 'layout.html' %} 
+{% include 'includes/_dashboardnavbar.html' %}
+
+{% block body %}
+
+<!--Modal-->
+<div class="modal" id="simple-modal">
+    <div class="modal-container">
+        <span class="closeBtn" id="closed">
+            &times;
+        </span>
+        <p class="modal-content">Are You sure ? You want to delete your profile</p>
+        <div class="opt-btn">
+            <a href="/delacc" class="btn btn-edit" id="btn-yes">Yes,Delete it</a>
+            <a class="btn btn-save" id ="btn-no"> No </a>
+        </div>
+       
+    </div>
+</div>
+<!---->
+
+<section class="profile-section">
+    {% if message %}
+  <div class="message-container">
+      <div class="container flex">
+          <p class="message-success">
+              {{ message|safe }}
+          </p>
+      </div>
+  </div>
+{% endif %}
+    <div class="container flex">
+        <h1 class="search-title">
+            My Profile
+        </h1>
+        <div class="profile-card">
+            <div class="profile-details-card">
+                <i class="fas fa-user-circle"></i>
+                <div class="profile-details">
+                    <h3 class="profile-name">{{user_details[0][0]}}</h3>
+                    <small class="username">@{{user_details[0][1]}}</small>
+                    <div class="profile-counts">
+                        <h4>{{total_reviews}} <small>Reviews</small></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-basic-details">
+                <h4 class="profile-title">Basic Details:-</h2>
+                <form action="" method="POST">
+                    <div class="profile-basic">
+                        <label>Name</label>
+                        <input name="name" type="text" value={{user_details[0][0]}} class="profile-inputs" disabled>
+                    </div>
+                    <div class="profile-basic">
+                        <label>Username</label>
+                        <input name="username" type="text" value={{user_details[0][1]}} class="profile-inputs" disabled>
+                    </div>
+                    <div class="profile-basic">
+                        <label>Email</label>
+                        <input name="email" type="email" value={{user_details[0][2]}} class="profile-inputs" disabled>
+                    </div>
+                    <div class="profile-basic">
+                        <label>Password</label>
+                        <input name="password" type="password" value={{user_details[0][3]}} class="profile-inputs" disabled>
+                    </div> 
+                    <div class="profile-btn">
+                        <a class="btn btn-edit" id="profile-edit" onclick="editProfile()">Edit Profile <i class="fas fa-pencil-alt"></i></a>          
+                        <a class="btn btn-save" id="profile-save" onclick="document.forms[0].submit();return false;">Save</a>          
+                    </div>  
+                </form>
+            </div>    
+            <div class="profile-bottom">
+                <a class="btn btn-edit" onclick="modalOpen()">Delete My Account <i class="fas fa-trash"></i></a>
+                <a href="/dashboard/myreviews" class="btn">My Reviews <i class="fas fa-edit"></i></a>
+            </div>
+        </div>  
+    </div>
+</section>
+{% include 'includes/_footer.html' %}
+{% endblock %}

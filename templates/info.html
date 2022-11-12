@@ -1,0 +1,142 @@
+{% extends 'layout.html' %} 
+{% include 'includes/_dashboardnavbar.html' %}
+
+{% block body %}
+
+
+<!--Modal-->
+
+<div class="modal" id="simple-modal">
+    <div class="modal-container">
+        
+        <span class="closeBtn" id="closed">
+            &times;
+        </span>
+        <p class="modal-content">Are You sure ? You want to delete your review</p>
+        <div class="opt-btn">
+            <a href="{{url_for('delrev',isbn = book_details[0][0])}}" class="btn btn-edit" id="btn-yes">Yes,Delete it</a>
+            <a class="btn btn-save" id ="btn-no"> No </a>
+        </div>
+       
+    </div>
+</div>
+
+<!--Modal-->
+
+<section class="books-section">
+    {% if message %}
+    <div class="message-container">
+        <div class="container flex">
+            <p class="message-success">
+                {{message|safe}}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+    <div class="container">
+        <div class="grid-books">
+            <div class="books-details">
+                <img src="http://covers.openlibrary.org/b/ISBN/{{book_details[0][0]}}-M.jpg" alt="No Image available" >
+                <div class="basic-details">
+                        <h4 class="title">Title</h4>
+                        <p>{{book_details[0][1]}}</p>
+                        <h4 class="title">Author</h4>
+                        <p>{{book_details[0][2]}}</p>
+                        <h4 class="title">Year</h4>
+                        <p>{{book_details[0][3]}}</p>
+                        <h4 class="title">ISBN</h4>
+                        <p>{{book_details[0][0]}}</p>
+                        <h4 class="title">Ratings</h4>
+                    {% if no_reviews %}
+                    <div class="ratings stars-outer">
+                            <div class="stars-inner">
+
+                            </div>
+                    </div>
+                    <small class="rate">(<span class="number-rating">{{avg_rat}}</span>/5)</small>
+                    {% endif %}
+                    {% if no_reviews == 0 %}
+                            <p>No Rating</p>
+                    {% endif %}
+                         <a href="{{ url_for('api', isbn='1416949658')}}" class="btn btn-edit" style="background-color: #f7b731;">Get API</a>
+                </div>
+            </div>
+            <div class="review-box">
+                <div class="reviews-bx">
+                    <h3 class="title">
+                        Add Your Reviews and Ratings
+                    </h3>
+                    <form action="" id="review-set" method = "POST">
+                       <div class="ratings">
+                           <input type="radio" name="star" id="star5" value="5" class="stars" required>
+                           <label for="star5"></label>
+                           <input type="radio" name="star" id="star4" value="4" class="stars" required> 
+                           <label for="star4"></label>
+                           <input type="radio" name="star" id="star3" value="3" class="stars" required>  
+                           <label for="star3"></label>
+                           <input type="radio" name="star" id="star2" value="2" class="stars" required>
+                           <label for="star2"></label>
+                           <input type="radio" name="star" id="star1" value="1" class="stars" required>
+                           <label for="star1"></label>    
+                       </div>
+                       <textarea name="addreview" id="reviewInput" placeholder="Enter your Review...." required>{% with m = get_flashed_messages() %}{% if m %}{% for mm in m%}{{mm}}{% endfor %}{% endif%}{% endwith %}</textarea>
+                       {% with m = get_flashed_messages() %}{% if m or isReview == False %}
+                       <input type="submit" class="btn btn-save" value="Submit">{% endif %}{%endwith %}
+                        {% if isReview %}
+                        <a href = "{{url_for('edit',isbn = book_details[0][0])}}" class="btn btn-edit" style="background-color: #f7b731;">Edit <i class="fas fa-pencil-alt"></i></a>
+                        <a class="btn btn-edit" onclick="modalOpen()">Delete <i class="fas fa-trash"></i></a>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+            <div class="review-section">
+                {% if no_reviews == 0 %}
+                <h2 class="no-data">No Reviews Yet</h2>
+                {% endif %}
+                {% if no_reviews %}
+                    <h3 class="title">All Reviews({{no_reviews}})</h3>
+                {% for rev in rev_rat %}
+                 <div class="review-section-box">
+                     <i class="fas fa-user-circle"></i>
+                     <div class="user-comments">
+                        <h4 class="name-of-user">{{names[loop.index - 1]}}</h4>
+                        <p class="comment">
+                            {{rev[0]}}
+                        </p>
+                        <div class="ratings stars-outer">
+                            <div class="stars-inner">
+
+                            </div>
+                        </div>
+                    <small class="rate">(<span class="number-rating">{{rev[1]}}</span>/5)</small>
+                     </div>
+                 </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</section>
+{% include 'includes/_footer.html' %}
+<script>
+    document.addEventListener('DOMContentLoaded',getRatings);
+function getRatings()
+{
+const stars = 5;
+const ratings = document.querySelectorAll('.number-rating');
+const ratingStar = document.querySelectorAll('.stars-inner');
+console.log(ratings);
+console.log(ratingStar);
+     for(let i=0; i<ratings.length; i++)
+     {
+       const starPercent = (ratings[i].innerHTML/stars)*100;
+       console.log(starPercent);
+       const starPercentRounded = `${Math.round(starPercent/10)*10}%`
+       console.log(starPercentRounded);
+       ratingStar[i].style.width=starPercentRounded;
+     }
+
+}
+</script>
+{% endblock %}

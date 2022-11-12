@@ -1,0 +1,46 @@
+{% extends 'layout.html' %} 
+{% include 'includes/_dashboardnavbar.html' %}
+
+{% block body %}
+
+<section class="search-results">
+    
+    <div class="container flex">
+        <h1 class="search-title">
+            Search Results
+        </h1>
+        <div class="search-table">
+            <table class="table-body">
+                <tr>
+                    <th>Sr no</th>
+                    <th>Title of Book</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th>Go To</th>
+                </tr>
+                {% for result in results %}
+                <tr>
+                     <td>{{loop.index}}</td>
+                     <td>{{result[1]}}</td>
+                     <td>{{result[2]}}</td>
+                     <td>{{result[0]}}</td>
+                     <td><a href="{{url_for('info',isbn=result[0])}}" class="btn">Read reviews &nbsp&nbsp<i class="fas fa-chevron-right"></i></a></td>
+                </tr> 
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+
+
+</section>
+<div class="form-content">
+                    {% if the_message %}
+                    <p class="message">
+                        {{ the_message | safe }}
+                    </p>
+                    {% endif %}
+</div>
+{% include 'includes/_footer.html' %}
+
+{% endblock %}
